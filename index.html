@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engile Ennodu Para I Love You</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-container">
+  
+    <section id="welcome" class="game-section active">
+      <div class="title-container">
+        <h1 class="main-title"><span class="malayalam">എങ്കിലെ എന്നോടു<br>പറ<br></span>I Love You</h1>
+        <button class="neon-button" onclick="startJourney()"><span class="malayalam">ആരമ്പിച്ചോ ആരംഭിച്ചോ..</span></button>
+      </div>
+    </section>
+
+    
+    <section id="flames" class="game-section">
+      <h2 class="section-title">FLAMES</h2>
+      <div class="game-content">
+        <div class="input-group">
+          <input type="text" id="name1" placeholder="Your Name" class="neon-input">
+          <div class="heart-divider">❤️</div>
+          <input type="text" id="name2" placeholder="Partner's Name" class="neon-input">
+        </div>
+        <button class="neon-button" onclick="calculateFlames()">Calculate Destiny!</button>
+        <div id="flames-result" class="result-box"></div>
+        <button class="neon-button next-button" onclick="nextGame('flames', 'horoscope')" style="display: none;">
+          Continue to Horoscope Match →
+        </button>
+      </div>
+    </section>
+
+    
+    <section id="horoscope" class="game-section">
+      <h2 class="section-title">Cosmic Love Match</h2>
+      <div class="game-content">
+        <div class="zodiac-selector">
+          <select id="sign1" class="neon-select">
+            <option value="">Your Zodiac Sign</option>
+            <option value="Aries">Aries</option>
+            <option value="Taurus">Taurus</option>
+            <option value="Gemini">Gemini</option>
+            <option value="Cancer">Cancer</option>
+            <option value="Leo">Leo</option>
+            <option value="Virgo">Virgo</option>
+            <option value="Libra">Libra</option>
+            <option value="Scorpio">Scorpio</option>
+            <option value="Sagittarius">Sagittarius</option>
+            <option value="Capricorn">Capricorn</option>
+            <option value="Aquarius">Aquarius</option>
+            <option value="Pisces">Pisces</option>
+          </select>
+          <div class="heart-divider">✨</div>
+          <select id="sign2" class="neon-select">
+            <option value="">Partner's Zodiac Sign</option>
+            <option value="Aries">Aries</option>
+            <option value="Taurus">Taurus</option>
+            <option value="Gemini">Gemini</option>
+            <option value="Cancer">Cancer</option>
+            <option value="Leo">Leo</option>
+            <option value="Virgo">Virgo</option>
+            <option value="Libra">Libra</option>
+            <option value="Scorpio">Scorpio</option>
+            <option value="Sagittarius">Sagittarius</option>
+            <option value="Capricorn">Capricorn</option>
+            <option value="Aquarius">Aquarius</option>
+            <option value="Pisces">Pisces</option>
+          </select>
+        </div>
+        <button class="neon-button" onclick="generateHoroscope()">Read the Stars!</button>
+        <div id="horoscope-result" class="result-box"></div>
+        <button class="neon-button next-button" onclick="nextGame('horoscope', 'flags')" style="display: none;">
+          Continue to Flag Test →
+        </button>
+      </div>
+    </section>
+
+     
+    <section id="flags" class="game-section">
+      <h2 class="section-title"><span class="malayalam">നിങ്ങളുടെ കൂട്ടാളി ഒരു പച്ചക്കൊടി ആണോ??</span></h2>
+      <div class="game-content">
+        <div id="flag-question" class="question-box"></div>
+        <div class="flag-buttons">
+          <button class="neon-button green" onclick="answerFlag(true)">YES! 💚</button>
+          <button class="neon-button red" onclick="answerFlag(false)">NO! 🚩</button>
+        </div>
+        <div class="progress-bar">
+          <div id="flag-progress" class="progress"></div>
+        </div>
+        <div id="flags-result" class="result-box"></div>
+        <button class="neon-button next-button" onclick="nextGame('flags', 'speedrun')" style="display: none;">
+          Continue to Love Speedrun →
+        </button>
+      </div>
+    </section>
+
+     
+    <section id="speedrun" class="game-section">
+      <h2 class="section-title">Love Speedrun</h2>
+      <div class="game-content">
+        <div id="years-counter" class="counter">100 Years</div>
+        <button id="speedrun-button" class="neon-button" onclick="startSpeedrun()">Start Speedrun!</button>
+        <div id="event-log" class="event-log"></div>
+        <div id="speedrun-result" class="result-box"></div>
+        <button class="neon-button next-button" onclick="showFinalReport()" style="display: none;">
+          View Love Report →
+        </button>
+      </div>
+    </section>
+
+     
+    <section id="final-report" class="game-section">
+      <h2 class="section-title">Your Love Report</h2>
+      <div class="game-content">
+        <div id="report-content" class="report-box">
+          <div class="report-section flames-report"></div>
+          <div class="report-section horoscope-report"></div>
+          <div class="report-section flags-report"></div>
+          <div class="report-section speedrun-report"></div>
+        </div>
+        <button class="neon-button" onclick="restartJourney()">Start New Journey</button>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
